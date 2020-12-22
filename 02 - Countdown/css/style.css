@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f1f5f8;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  padding: 36px;
+  margin: 0 auto;
+}
+
+.container p {
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  min-width: 320px;
+}
+
+.countdown-item {
+  background-color: #49a6e9;
+  padding: 6px;
+  min-width: 65px;
+}
+
+.expired {
+  color: #222;
+  margin: 0 auto;
+}
