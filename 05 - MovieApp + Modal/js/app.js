@@ -80,7 +80,6 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-
 // Modal
 const modalEl = document.querySelector(".modal");
 
@@ -92,16 +91,16 @@ async function openModal(id) {
     },
   });
   const respData = await resp.json();
-
-  modalEl.classList.add("modal--show")
+  
+  modalEl.classList.add("modal--show");
   document.body.classList.add("stop-scrolling");
 
   modalEl.innerHTML = `
     <div class="modal__card">
       <img class="modal__movie-backdrop" src="${respData.posterUrl}" alt="">
       <h2>
-        <span class="modal__movie-title">Название - ${respData.nameRu}</span>
-        <span class="modal__movie-release-year">Год - ${respData.year}</span>
+        <span class="modal__movie-title">${respData.nameRu}</span>
+        <span class="modal__movie-release-year"> - ${respData.year}</span>
       </h2>
       <ul class="modal__movie-info">
         <div class="loader"></div>
@@ -114,11 +113,11 @@ async function openModal(id) {
     </div>
   `
   const btnClose = document.querySelector(".modal__button-close");
-  btnClose.addEventListener("click", () => closeModal())
+  btnClose.addEventListener("click", () => closeModal());
 }
 
-async function closeModal() {
-  modalEl.classList.remove("modal--show")
+function closeModal() {
+  modalEl.classList.remove("modal--show");
   document.body.classList.remove("stop-scrolling");
 }
 
@@ -130,7 +129,6 @@ window.addEventListener("click", (e) => {
 
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
-    modalEl.classList.remove("modal--show")
-    document.body.classList.remove("stop-scrolling");
+    closeModal();
   }
 })
