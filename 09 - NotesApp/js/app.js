@@ -25,8 +25,6 @@ function createNote(title, text) {
   const titleInputEl = noteEl.querySelector('#note-title-input');
   const textInputEl = noteEl.querySelector('#note-textarea');
 
-
-
   editBtn.addEventListener('click', (e) => {
     titleEl.classList.toggle('hidden');
     textEl.classList.toggle('hidden');
